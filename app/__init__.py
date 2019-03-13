@@ -27,7 +27,6 @@ login = LoginManager()
 login.login_view = 'auth.login'
 login.login_message = _l('Please log in to access this page.')
 mail = Mail()
-
 babel = Babel()
 
 

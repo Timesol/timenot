@@ -6,7 +6,31 @@ from app.main import bp
 
 @bp.route('/', methods=['GET', 'POST'])
 @bp.route('/index', methods=['GET', 'POST'])
-@login_required
+
 def index():
 
 	return render_template('index.html')
+
+
+
+
+
+
+@bp.route('/container_explain', methods=['GET', 'POST'])
+
+def container_explain():
+
+
+
+	return render_template('explain.html')
+
+
+
+@bp.route('/howitworks', methods=['GET', 'POST'])
+
+def howitworks():
+
+	
+
+	return render_template('howitworks.html')
+

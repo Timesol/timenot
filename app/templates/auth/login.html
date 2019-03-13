@@ -3,15 +3,27 @@
 
 {% block app_content %}
     <h1>{{ _('Sign In') }}</h1>
+    <div class="row">
+    <div class="col-xs-4" >
+        <p>
+        {{form.username.label()}}<br>
+        {{form.username(class='form-control')}}</p>
 
-    <button class="btn btn-danger">Test</button>
-    <div >
-        {{form.username.label()}}
-        {{form.username()}}
+        {{form.password.label()}}<br>
+        {{form.password(class='form-control')}}</p>
+
+        {{form.remember_me.label()}}<br>
+        {{form.remember_me()}}</p>
+
+        <p>
+            {{form.submit(class="btn btn-success")}}
+
+        </p>
+            
       
            
-        </div>
-    </div>
+      
+   
     <br>
     <p>{{ _('New User?') }} <a href="{{ url_for('auth.register') }}">{{ _('Click to Register!') }}</a></p>
     <p>
@@ -20,9 +32,9 @@
     </p>
     <p>
         {{ _('Change Password?') }}
-        <a href="{{ url_for('auth.change_password') }}">{{ _('Click to Change It') }}</a>
+        <a href="{{ url_for('auth.change_password') }}">{{ _('Click to Change It') }}</a></p>
 
+  </div>
 
-
-    </p>
+    </div> <!-- End div form row -->
 {% endblock %}
