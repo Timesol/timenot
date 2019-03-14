@@ -7,6 +7,7 @@ from app import db
 from app.auth import bp
 from app.auth.forms import LoginForm, RegistrationForm, \
     ResetPasswordRequestForm, ResetPasswordForm, ChangePasswordForm
+    
 from app.models import User
 from app.auth.email import send_password_reset_email
 from flask import session
