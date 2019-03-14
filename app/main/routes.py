@@ -98,5 +98,17 @@ def footer():
 	return render_template('footer.html')
 
 
+@bp.route('/configurator', methods=['GET', 'POST'])
+
+def configurator():
+
+	available_options=['Office 365 Standard','Domainumgebung','Firewall','Zugriffsverwaltung','Support Basic Ticket','Einrichtung Telefon','Einrichtung Internet','Logoerstellung','Eingene Webseite Basic']
+
+	
+
+	return render_template('configurator.html',available_options=available_options)
+
+
+
 
 
