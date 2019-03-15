@@ -6,9 +6,11 @@ let loaded_sec_5=false;
 
 jQuery(window).scroll(function() {
 
-var bottom_position = $(document).height() - ($(window).scrollTop() + $(window).height());
 
-if (bottom_position<-250 && loaded_sec_1==false){
+var bottom_position = $(document).height() - ($(window).scrollTop() + $(window).height());
+console.log(bottom_position)
+
+if (bottom_position<-100 && loaded_sec_1==false){
 refresh('/container_explain','section-1-container')
 loaded_sec_1=true;
 
@@ -17,7 +19,7 @@ loaded_sec_1=true;
 
 
 
-if (bottom_position<-600 && loaded_sec_2==false){
+if (bottom_position<-500 && loaded_sec_2==false){
 
 loaded_sec_1=true;
 document.getElementById("section-2-container").style["display"]="block";
@@ -27,14 +29,14 @@ document.getElementById("section-2-container").style["display"]="block";
 
 
 
-if (bottom_position<-800 && loaded_sec_3==false){
+if (bottom_position<-700 && loaded_sec_3==false){
 refresh('/howitworks','section-3-container')
 loaded_sec_3=true;
 
 
 }
 
-if (bottom_position<-1200 && loaded_sec_4==false){
+if (bottom_position<-900 && loaded_sec_4==false){
 refresh('/packages','section-4-container')
 loaded_sec_4=true;
 
@@ -42,7 +44,7 @@ loaded_sec_4=true;
 }
 
 
-if (bottom_position<-1800 && loaded_sec_5==false){
+if (bottom_position<-1200 && loaded_sec_5==false){
 refresh('/footer','section-6-container')
 loaded_sec_5=true;
 

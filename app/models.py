@@ -23,6 +23,7 @@ class User(UserMixin,db.Model):
     posts = db.relationship('Post', backref='author', lazy='dynamic')
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
+    modules=db.relationship('Modules', backref='options', lazy='dynamic')
     @login.user_loader
         
 
@@ -61,6 +62,16 @@ class User(UserMixin,db.Model):
         digest = md5(self.email.lower().encode('utf-8')).hexdigest()
         return 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(
             digest, size)    
+
+
+class Modules(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name=db.Column(db.String(140))
+    short_key=db.Column(db.String(32))
+    time=db.Column(db.Integer())
+    price=db.Column(db.Integer())
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
 
 
 
